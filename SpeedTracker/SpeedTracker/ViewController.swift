@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (data, error) in
             if let myData = data
             {
+                //assume velocity at the beginning is 0?
                 print(myData)
             }
         }
