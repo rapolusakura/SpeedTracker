@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		443CFC1E210A38520014EF27 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 443CFC1D210A38520014EF27 /* MapKit.framework */; };
+		443CFC21210A3CA20014EF27 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CFC20210A3CA20014EF27 /* Coordinate.swift */; };
 		4454507F2107B5F80067348A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4454507E2107B5F80067348A /* AppDelegate.swift */; };
-		445450812107B5F80067348A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445450802107B5F80067348A /* ViewController.swift */; };
+		445450812107B5F80067348A /* EnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445450802107B5F80067348A /* EnterViewController.swift */; };
 		445450842107B5F80067348A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445450822107B5F80067348A /* Main.storyboard */; };
 		445450872107B5F80067348A /* SpeedTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 445450852107B5F80067348A /* SpeedTracker.xcdatamodeld */; };
 		445450892107B5FA0067348A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 445450882107B5FA0067348A /* Assets.xcassets */; };
 		4454508C2107B5FA0067348A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4454508A2107B5FA0067348A /* LaunchScreen.storyboard */; };
+		44C10204210911AE007B9838 /* DisplayStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C10203210911AE007B9838 /* DisplayStatsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		443CFC1D210A38520014EF27 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		443CFC20210A3CA20014EF27 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		4454507B2107B5F80067348A /* SpeedTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4454507E2107B5F80067348A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		445450802107B5F80067348A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		445450802107B5F80067348A /* EnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewController.swift; sourceTree = "<group>"; };
 		445450832107B5F80067348A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		445450862107B5F80067348A /* SpeedTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpeedTracker.xcdatamodel; sourceTree = "<group>"; };
 		445450882107B5FA0067348A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4454508B2107B5FA0067348A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4454508D2107B5FA0067348A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44C10203210911AE007B9838 /* DisplayStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayStatsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				443CFC1E210A38520014EF27 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		443CFC1C210A38520014EF27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				443CFC1D210A38520014EF27 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		443CFC1F210A3C930014EF27 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				443CFC20210A3CA20014EF27 /* Coordinate.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		445450722107B5F80067348A = {
 			isa = PBXGroup;
 			children = (
 				4454507D2107B5F80067348A /* SpeedTracker */,
 				4454507C2107B5F80067348A /* Products */,
+				443CFC1C210A38520014EF27 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,8 +80,10 @@
 		4454507D2107B5F80067348A /* SpeedTracker */ = {
 			isa = PBXGroup;
 			children = (
+				443CFC1F210A3C930014EF27 /* Models */,
 				4454507E2107B5F80067348A /* AppDelegate.swift */,
-				445450802107B5F80067348A /* ViewController.swift */,
+				445450802107B5F80067348A /* EnterViewController.swift */,
+				44C10203210911AE007B9838 /* DisplayStatsViewController.swift */,
 				445450822107B5F80067348A /* Main.storyboard */,
 				445450882107B5FA0067348A /* Assets.xcassets */,
 				4454508A2107B5FA0067348A /* LaunchScreen.storyboard */,
@@ -99,6 +125,11 @@
 				TargetAttributes = {
 					4454507A2107B5F80067348A = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -139,8 +170,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				445450872107B5F80067348A /* SpeedTracker.xcdatamodeld in Sources */,
-				445450812107B5F80067348A /* ViewController.swift in Sources */,
+				445450812107B5F80067348A /* EnterViewController.swift in Sources */,
+				44C10204210911AE007B9838 /* DisplayStatsViewController.swift in Sources */,
 				4454507F2107B5F80067348A /* AppDelegate.swift in Sources */,
+				443CFC21210A3CA20014EF27 /* Coordinate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
