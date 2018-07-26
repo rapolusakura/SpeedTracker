@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		443CFC1E210A38520014EF27 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 443CFC1D210A38520014EF27 /* MapKit.framework */; };
 		443CFC21210A3CA20014EF27 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CFC20210A3CA20014EF27 /* Coordinate.swift */; };
+		443CFC24210A496D0014EF27 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CFC23210A496D0014EF27 /* Trip.swift */; };
 		4454507F2107B5F80067348A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4454507E2107B5F80067348A /* AppDelegate.swift */; };
 		445450812107B5F80067348A /* EnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445450802107B5F80067348A /* EnterViewController.swift */; };
 		445450842107B5F80067348A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445450822107B5F80067348A /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		443CFC1D210A38520014EF27 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		443CFC20210A3CA20014EF27 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		443CFC23210A496D0014EF27 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		4454507B2107B5F80067348A /* SpeedTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4454507E2107B5F80067348A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		445450802107B5F80067348A /* EnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 		443CFC1F210A3C930014EF27 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				443CFC23210A496D0014EF27 /* Trip.swift */,
 				443CFC20210A3CA20014EF27 /* Coordinate.swift */,
 			);
 			path = Models;
@@ -169,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				443CFC24210A496D0014EF27 /* Trip.swift in Sources */,
 				445450872107B5F80067348A /* SpeedTracker.xcdatamodeld in Sources */,
 				445450812107B5F80067348A /* EnterViewController.swift in Sources */,
 				44C10204210911AE007B9838 /* DisplayStatsViewController.swift in Sources */,
