@@ -6,6 +6,7 @@
 //  Copyright © 2018 MakeSchool. All rights reserved.
 //
 import UIKit
+import Alamofire
 import CoreLocation
 
 class EnterViewController: UIViewController {
@@ -39,11 +40,12 @@ class EnterViewController: UIViewController {
                 locationManager.requestAlwaysAuthorization()
             }
             locationManager.desiredAccuracy=kCLLocationAccuracyBest
+            location = locationManager.location
             
-            if( CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
-                CLLocationManager.authorizationStatus() ==  .authorizedAlways){
-                location = locationManager.location
-                
+            let parameters = ["key":Constants.apiKey,"path":"37.7771755,-122.4271653", "interpolate":"true"]
+            
+            Alamofire.request("https://roads.googleapis.com/v1/snapToRoads?", parameters: parameters).responseJSON(options:.mutableContainers) {JSON in
+                print(JSON)
             }
             
             path.append(Coordinate(lat: location.coordinate.latitude, long: location.coordinate.longitude))

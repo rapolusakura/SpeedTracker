@@ -1,0 +1,6 @@
+framework module Pods_SpeedTracker {
+  umbrella header "Pods-SpeedTracker-umbrella.h"
+
+  export *
+  module * { export * }
+}

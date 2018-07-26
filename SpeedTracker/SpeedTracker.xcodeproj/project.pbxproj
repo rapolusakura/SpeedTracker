@@ -10,6 +10,7 @@
 		443CFC1E210A38520014EF27 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 443CFC1D210A38520014EF27 /* MapKit.framework */; };
 		443CFC21210A3CA20014EF27 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CFC20210A3CA20014EF27 /* Coordinate.swift */; };
 		443CFC24210A496D0014EF27 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CFC23210A496D0014EF27 /* Trip.swift */; };
+		443CFC27210A51DE0014EF27 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CFC26210A51DE0014EF27 /* Constants.swift */; };
 		4454507F2107B5F80067348A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4454507E2107B5F80067348A /* AppDelegate.swift */; };
 		445450812107B5F80067348A /* EnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445450802107B5F80067348A /* EnterViewController.swift */; };
 		445450842107B5F80067348A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445450822107B5F80067348A /* Main.storyboard */; };
@@ -17,12 +18,15 @@
 		445450892107B5FA0067348A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 445450882107B5FA0067348A /* Assets.xcassets */; };
 		4454508C2107B5FA0067348A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4454508A2107B5FA0067348A /* LaunchScreen.storyboard */; };
 		44C10204210911AE007B9838 /* DisplayStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C10203210911AE007B9838 /* DisplayStatsViewController.swift */; };
+		D1A529FB1E8957DAF2308A3E /* Pods_SpeedTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F0385BCD809DFC17EAFA49 /* Pods_SpeedTracker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04F0385BCD809DFC17EAFA49 /* Pods_SpeedTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpeedTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		443CFC1D210A38520014EF27 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		443CFC20210A3CA20014EF27 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		443CFC23210A496D0014EF27 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		443CFC26210A51DE0014EF27 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4454507B2107B5F80067348A /* SpeedTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4454507E2107B5F80067348A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		445450802107B5F80067348A /* EnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +36,8 @@
 		4454508B2107B5FA0067348A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4454508D2107B5FA0067348A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44C10203210911AE007B9838 /* DisplayStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayStatsViewController.swift; sourceTree = "<group>"; };
+		4E093915C61BD87EE90F89FD /* Pods-SpeedTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedTracker/Pods-SpeedTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		7F000CCA534E5BF0A84C9F2F /* Pods-SpeedTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedTracker/Pods-SpeedTracker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +46,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				443CFC1E210A38520014EF27 /* MapKit.framework in Frameworks */,
+				D1A529FB1E8957DAF2308A3E /* Pods_SpeedTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				443CFC1D210A38520014EF27 /* MapKit.framework */,
+				04F0385BCD809DFC17EAFA49 /* Pods_SpeedTracker.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -63,12 +71,21 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		443CFC25210A51C60014EF27 /* Helper Services */ = {
+			isa = PBXGroup;
+			children = (
+				443CFC26210A51DE0014EF27 /* Constants.swift */,
+			);
+			path = "Helper Services";
+			sourceTree = "<group>";
+		};
 		445450722107B5F80067348A = {
 			isa = PBXGroup;
 			children = (
 				4454507D2107B5F80067348A /* SpeedTracker */,
 				4454507C2107B5F80067348A /* Products */,
 				443CFC1C210A38520014EF27 /* Frameworks */,
+				8BF0A38DCD7BF8C9B58AEB89 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +100,7 @@
 		4454507D2107B5F80067348A /* SpeedTracker */ = {
 			isa = PBXGroup;
 			children = (
+				443CFC25210A51C60014EF27 /* Helper Services */,
 				443CFC1F210A3C930014EF27 /* Models */,
 				4454507E2107B5F80067348A /* AppDelegate.swift */,
 				445450802107B5F80067348A /* EnterViewController.swift */,
@@ -96,6 +114,15 @@
 			path = SpeedTracker;
 			sourceTree = "<group>";
 		};
+		8BF0A38DCD7BF8C9B58AEB89 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4E093915C61BD87EE90F89FD /* Pods-SpeedTracker.debug.xcconfig */,
+				7F000CCA534E5BF0A84C9F2F /* Pods-SpeedTracker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +130,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 445450902107B5FA0067348A /* Build configuration list for PBXNativeTarget "SpeedTracker" */;
 			buildPhases = (
+				16B198C415EFC77E7203EE75 /* [CP] Check Pods Manifest.lock */,
 				445450772107B5F80067348A /* Sources */,
 				445450782107B5F80067348A /* Frameworks */,
 				445450792107B5F80067348A /* Resources */,
+				F53906962B3B2B36CF4FB870 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,11 +196,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		16B198C415EFC77E7203EE75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SpeedTracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F53906962B3B2B36CF4FB870 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SpeedTracker/Pods-SpeedTracker-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpeedTracker/Pods-SpeedTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		445450772107B5F80067348A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				443CFC27210A51DE0014EF27 /* Constants.swift in Sources */,
 				443CFC24210A496D0014EF27 /* Trip.swift in Sources */,
 				445450872107B5F80067348A /* SpeedTracker.xcdatamodeld in Sources */,
 				445450812107B5F80067348A /* EnterViewController.swift in Sources */,
@@ -319,6 +390,7 @@
 		};
 		445450912107B5FA0067348A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E093915C61BD87EE90F89FD /* Pods-SpeedTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -337,6 +409,7 @@
 		};
 		445450922107B5FA0067348A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F000CCA534E5BF0A84C9F2F /* Pods-SpeedTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
