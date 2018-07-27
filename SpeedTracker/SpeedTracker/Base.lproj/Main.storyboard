@@ -64,6 +64,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="countLabel" destination="Xpa-FO-Emo" id="G7y-0d-FB4"/>
                         <outlet property="speedLabel" destination="g1h-PG-50A" id="kMM-5L-De2"/>
                         <outlet property="startTripButtonLabel" destination="ibL-Yu-SUd" id="56g-Op-JGa"/>
                         <segue destination="IFx-Ci-C6E" kind="show" identifier="displayStats" id="wB9-Qb-Tn4"/>

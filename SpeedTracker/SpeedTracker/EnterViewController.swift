@@ -8,19 +8,27 @@
 import UIKit
 import Alamofire
 import CoreLocation
+import CoreMotion
 
 class EnterViewController: UIViewController {
+        let motionManager = CMMotionManager()
         let locationManager = CLLocationManager()
         var startedTrip: Bool = false
         var path =  [Coordinate]()
         var location: CLLocation!
+        var speed: CLLocationSpeed!
+        var acceleration: CMAcceleration!
+        let speedLimit: Double = 1
+        var count: Double = 0
         
-        @IBOutlet weak var startTripButtonLabel: UIButton!
+    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var startTripButtonLabel: UIButton!
         
         @IBAction func startTripButtonPressed(_ sender: UIButton) {
             if startedTrip {
                 startedTrip = false
                 locationManager.stopUpdatingLocation()
+                motionManager.stopAccelerometerUpdates()
                 sender.setTitle("Start Trip", for: UIControlState.normal)
                 self.performSegue(withIdentifier: "displayStats", sender: self)
             } else {
@@ -34,47 +42,61 @@ class EnterViewController: UIViewController {
         
         override func viewDidLoad() {
             super.viewDidLoad()
-            // Do any additional setup after loading the view, typically from a nib.
             locationManager.delegate = self
-            if NSString(string:UIDevice.current.systemVersion).doubleValue > 8 {
-                locationManager.requestAlwaysAuthorization()
-            }
-            locationManager.desiredAccuracy=kCLLocationAccuracyBest
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.requestLocation()
+            // Do any additional setup after loading the view, typically from a nib.
+            view.backgroundColor = .green
+            //gets initial location
             location = locationManager.location
+//            path.append(Coordinate(lat: location.coordinate.latitude, long: location.coordinate.longitude))
             
-            let parameters = ["key":Constants.apiKey,"path":"37.7771755,-122.4271653", "interpolate":"true"]
-            
-            Alamofire.request("https://roads.googleapis.com/v1/snapToRoads?", parameters: parameters).responseJSON(options:.mutableContainers) {JSON in
-                print(JSON)
-            }
-            
-            path.append(Coordinate(lat: location.coordinate.latitude, long: location.coordinate.longitude))
-            
-            speedLabel.text = String("latitude: \(location.coordinate.latitude) longitude: \(location.coordinate.longitude)")
-            print(String("latitude: \(location.coordinate.latitude) longitude: \(location.coordinate.longitude)"))
+//            speedLabel.text = String("latitude: \(location.coordinate.latitude) longitude: \(location.coordinate.longitude)")
         }
 
         @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
             
         }
-
 }
 
 extension EnterViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        var speed: CLLocationSpeed
+        acceleration = motionManager.accelerometerData?.acceleration
         speed = (locationManager.location?.speed)!
+        count = count + 1
         speedLabel.text = String(format: "%.2f", speed)
+        if isSpeeding(currSpeed: speed, speedLimit: speedLimit) {
+            view.backgroundColor = .red
+            view.reloadInputViews()
+        } else {
+            view.backgroundColor = .green
+            view.reloadInputViews()
+        }
+        countLabel.text = String(count)
         location = locationManager.location
-        path.append(Coordinate(lat: location.coordinate.latitude, long: location.coordinate.longitude))
-        print(String("latitude: \(location.coordinate.latitude) longitude: \(location.coordinate.longitude)"))
+        path.append(Coordinate(lat: location.coordinate.latitude, long:         location.coordinate.longitude))
+        
+//        let parameters = ["key":Constants.apiKey,"path":"37.7771755,-122.4271653", "interpolate":"true"]
+//
+//        Alamofire.request("https://roads.googleapis.com/v1/snapToRoads?", parameters: parameters).responseJSON(options:.mutableContainers) {JSON in
+//            print(JSON)
+//        }
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status != CLAuthorizationStatus.denied{
+            locationManager.distanceFilter = 1
             locationManager.startUpdatingLocation()
+            motionManager.accelerometerUpdateInterval = 0.5
+            motionManager.startAccelerometerUpdates()
         }
     }
+    
+    func isSpeeding(currSpeed: Double, speedLimit: Double) -> Bool {
+        return currSpeed > speedLimit
+    }
 }
+
 
