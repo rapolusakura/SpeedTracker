@@ -50,9 +50,8 @@ class EnterViewController: UIViewController {
             view.backgroundColor = .green
             //gets initial location
             location = locationManager.location
-//            path.append(Coordinate(lat: location.coordinate.latitude, long: location.coordinate.longitude))
-            
-//            speedLabel.text = String("latitude: \(location.coordinate.latitude) longitude: \(location.coordinate.longitude)")
+            print(location.coordinate.longitude)
+            print(location.coordinate.latitude)
         }
 
         @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
@@ -63,6 +62,10 @@ class EnterViewController: UIViewController {
 extension EnterViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            print("location: \(location)")
+        }
+        
         acceleration = motionManager.accelerometerData?.acceleration
         speed = (locationManager.location?.speed)!
         count = count + 1
@@ -77,16 +80,11 @@ extension EnterViewController: CLLocationManagerDelegate {
         countLabel.text = String(count)
         location = locationManager.location
         path.append(Coordinate(lat: location.coordinate.latitude, long:         location.coordinate.longitude))
-        
-//        let parameters = ["key":Constants.apiKey,"path":"37.7771755,-122.4271653", "interpolate":"true"]
-//
-//        Alamofire.request("https://roads.googleapis.com/v1/snapToRoads?", parameters: parameters).responseJSON(options:.mutableContainers) {JSON in
-//            print(JSON)
-//        }
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status != CLAuthorizationStatus.denied{
+            locationManager.requestLocation()
             locationManager.distanceFilter = 1
             locationManager.startUpdatingLocation()
             motionManager.accelerometerUpdateInterval = 0.5
@@ -96,6 +94,10 @@ extension EnterViewController: CLLocationManagerDelegate {
     
     func isSpeeding(currSpeed: Double, speedLimit: Double) -> Bool {
         return currSpeed > speedLimit
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("error:: (error)")
     }
 }
 
